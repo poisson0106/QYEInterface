@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <div class="navbar">
 	<div class="navbar-inner">
     <!-- We have home navbar without left link-->
@@ -10,6 +11,7 @@
 </div>
 <div data-page="weibo" class="page">
 	<div class="page-content">
+	{{#each}}
 		<div class="card facebook-card">
 		  <div class="card-header">
 		    <div class="facebook-name">{{name}}</div>
@@ -26,6 +28,7 @@
 		    <a href="#" class="link">Comments:{{commentsNum}}</a>
 		    <a href="#" class="link">Like:{{goodNum}}</a>
 		  </div>
-		</div>   
+		</div>
+	{{/each}}
 	</div>
 </div>

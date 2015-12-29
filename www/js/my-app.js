@@ -1,14 +1,5 @@
 // Initialize your app
-var myApp = new Framework7();
-
-// Export selectors engine
-var $$ = Dom7;
-
-// Add view
-var mainView = myApp.addView('.view-main', {
-    // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true,
-    precompileTemplates: true,
+var myApp = new Framework7({
     template7Pages: true,
     template7Data: {
         cars: [
@@ -46,6 +37,15 @@ var mainView = myApp.addView('.view-main', {
     }
 });
 
+// Export selectors engine
+var $$ = Dom7;
+
+// Add view
+var mainView = myApp.addView('.view-main', {
+    // Because we use fixed-through navbar we can enable dynamic navbar
+    dynamicNavbar: true,
+});
+
 mainView.hideNavbar();
 
 myApp.onPageInit('index', function (page) {
@@ -61,15 +61,10 @@ myApp.onPageInit('index', function (page) {
             dataType : "json",
             success : function(data, status, xhr){
                 if(data != null){
-                    /*for(i=0;i<data.length;i++){
-                        myApp.alert(data[i].postDate,"QY");
-                    }*/
+                    myApp.alert(data[0].name+data[0].postBy, "QY");
                     mainView.router.load({
                         url : 'weibo.html',
-                        context: {
-                            tel: '(999)-111-22-33',
-                            email: 'contact@john.doe'
-                        }
+                        context:data
                     });
                 }
                 else
@@ -84,8 +79,9 @@ myApp.onPageInit('index', function (page) {
 
 myApp.onPageInit('weibo',function(page){
     var context = page.context;
+    myApp.alert(context,"QY");
     if(context==null)
-        myApp.alert(context,"QY");
+        myApp.alert("null","QY");
 });
 
 $$("#toLogin").click(function(){
