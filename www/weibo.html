@@ -1,0 +1,31 @@
+<div class="navbar">
+	<div class="navbar-inner">
+    <!-- We have home navbar without left link-->
+    	<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    	<div class="center sliding">Weibo</div>
+    	<div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    	</div>
+	</div>
+</div>
+<div data-page="weibo" class="page">
+	<div class="page-content">
+		<div class="card facebook-card">
+		  <div class="card-header">
+		    <div class="facebook-name">{{name}}</div>
+		    <div class="facebook-date">{{postDate}}</div>
+		  </div>
+		  <div class="card-content">
+		    <div class="card-content-inner">
+		      <p>{{info}}</p>
+		      <p class="color-gray">Post by:{{postBy}}</p>
+		    </div>
+		  </div>
+		  <div class="card-footer">
+		    <a href="#" class="link">Forward:{{forwardNum}}</a>
+		    <a href="#" class="link">Comments:{{commentsNum}}</a>
+		    <a href="#" class="link">Like:{{goodNum}}</a>
+		  </div>
+		</div>   
+	</div>
+</div>
