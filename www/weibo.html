@@ -11,7 +11,8 @@
 </div>
 <div data-page="weibo" class="page">
 	<div class="page-content">
-	{{#each}}
+	{{#if this}}
+	{{#each this}}
 		<div class="card facebook-card">
 		  <div class="card-header">
 		    <div class="facebook-name">{{name}}</div>
@@ -30,5 +31,8 @@
 		  </div>
 		</div>
 	{{/each}}
+	{{else}}
+		<p>Error</p>
+	{{/if}}
 	</div>
 </div>

@@ -61,10 +61,28 @@ myApp.onPageInit('index', function (page) {
             dataType : "json",
             success : function(data, status, xhr){
                 if(data != null){
-                    myApp.alert(data[0].name+data[0].postBy, "QY");
                     mainView.router.load({
                         url : 'weibo.html',
-                        context:data
+                        context:data/*[
+                            {
+                                name : 'qy1',
+                                postDate : '2015-12-29',
+                                info : 'QY is qy',
+                                postBy : 'iPhone 6s客户端',
+                                forwardNum : 12,
+                                commentsNum : 23,
+                                goodNum : 34
+                            },
+                            {
+                                name : 'qy1',
+                                postDate : '2015-12-29',
+                                info : 'QY is qy',
+                                postBy : 'iPhone 6s客户端',
+                                forwardNum : 12,
+                                commentsNum : 23,
+                                goodNum : 34
+                            },
+                        ]*/
                     });
                 }
                 else
@@ -78,10 +96,10 @@ myApp.onPageInit('index', function (page) {
 });
 
 myApp.onPageInit('weibo',function(page){
-    var context = page.context;
+/*    var context = page.context;
     myApp.alert(context,"QY");
     if(context==null)
-        myApp.alert("null","QY");
+        myApp.alert("null","QY");*/
 });
 
 $$("#toLogin").click(function(){
@@ -99,6 +117,7 @@ $$("#toLogin").click(function(){
                 mainView.router.loadPage(url);   
         },
         error : function (xhr, status){
+            myApp.alert(status,"QY");
             myApp.alert("Username or Password invaild", "QY");
         }
     });
